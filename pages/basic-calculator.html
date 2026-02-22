@@ -31,6 +31,73 @@
             letter-spacing: -0.03em;
         }
 
+        .calculator-wrapper {
+            max-width: 430px;
+            margin: 0 auto;
+        }
+
+        .calculator-card {
+            border-color: var(--bs-border-color) !important;
+        }
+
+        .calculator-display {
+            min-height: 120px;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            text-align: right;
+            background: var(--bs-tertiary-bg);
+            border: 1px solid var(--bs-border-color);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .calculator-expression {
+            min-height: 24px;
+            color: var(--bs-secondary-color);
+            font-size: 0.9rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .calculator-result {
+            margin-top: 0.25rem;
+            color: var(--bs-body-color);
+            font-size: 2.25rem;
+            font-weight: 600;
+            line-height: 1.2;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .calculator-keypad {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75rem;
+        }
+
+        .calculator-key {
+            min-height: 64px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .calculator-key.operator {
+            font-weight: 600;
+        }
+
+        .calculator-key.equal {
+            font-weight: 600;
+        }
+
+        .calculator-key.zero {
+            grid-column: span 2;
+        }
+
         footer {
             margin-top: 6rem;
         }
@@ -38,6 +105,14 @@
         @media (max-width: 575.98px) {
             .hero {
                 padding: 3rem 0 2rem;
+            }
+
+            .calculator-result {
+                font-size: 2rem;
+            }
+
+            .calculator-key {
+                min-height: 58px;
             }
         }
     </style>
@@ -62,6 +137,125 @@
 
             </div>
         </section>
+
+        <!-- Calculator -->
+        <section>
+            <div class="container">
+
+                <div class="calculator-wrapper">
+
+                    <div class="card calculator-card">
+                        <div class="card-body p-4">
+
+                            <!-- Display -->
+                            <div class="calculator-display mb-4">
+                                <div id="expression" class="calculator-expression">
+                                    &nbsp;
+                                </div>
+
+                                <div id="result" class="calculator-result">0</div>
+                            </div>
+
+                            <!-- Keypad -->
+                            <div class="calculator-keypad">
+
+                                <!-- Row 1 -->
+                                <button type="button" class="btn btn-outline-secondary calculator-key"
+                                    data-action="clear">
+                                    AC
+                                </button>
+
+                                <button type="button" class="btn btn-outline-secondary calculator-key"
+                                    data-action="delete">
+                                    DEL
+                                </button>
+
+                                <button type="button" class="btn btn-outline-secondary calculator-key operator"
+                                    data-value="%">
+                                    %
+                                </button>
+
+                                <button type="button" class="btn btn-outline-primary calculator-key operator"
+                                    data-value="/">
+                                    ÷
+                                </button>
+
+                                <!-- Row 2 -->
+                                <button type="button" class="btn btn-secondary calculator-key" data-value="7">
+                                    7
+                                </button>
+
+                                <button type="button" class="btn btn-secondary calculator-key" data-value="8">
+                                    8
+                                </button>
+
+                                <button type="button" class="btn btn-secondary calculator-key" data-value="9">
+                                    9
+                                </button>
+
+                                <button type="button" class="btn btn-outline-primary calculator-key operator"
+                                    data-value="*">
+                                    ×
+                                </button>
+
+                                <!-- Row 3 -->
+                                <button type="button" class="btn btn-secondary calculator-key" data-value="4">
+                                    4
+                                </button>
+
+                                <button type="button" class="btn btn-secondary calculator-key" data-value="5">
+                                    5
+                                </button>
+
+                                <button type="button" class="btn btn-secondary calculator-key" data-value="6">
+                                    6
+                                </button>
+
+                                <button type="button" class="btn btn-outline-primary calculator-key operator"
+                                    data-value="-">
+                                    −
+                                </button>
+
+                                <!-- Row 4 -->
+                                <button type="button" class="btn btn-secondary calculator-key" data-value="1">
+                                    1
+                                </button>
+
+                                <button type="button" class="btn btn-secondary calculator-key" data-value="2">
+                                    2
+                                </button>
+
+                                <button type="button" class="btn btn-secondary calculator-key" data-value="3">
+                                    3
+                                </button>
+
+                                <button type="button" class="btn btn-outline-primary calculator-key operator"
+                                    data-value="+">
+                                    +
+                                </button>
+
+                                <!-- Row 5 -->
+                                <button type="button" class="btn btn-secondary calculator-key zero" data-value="0">
+                                    0
+                                </button>
+
+                                <button type="button" class="btn btn-secondary calculator-key" data-value=".">
+                                    .
+                                </button>
+
+                                <button type="button" class="btn btn-primary calculator-key equal"
+                                    data-action="calculate">
+                                    =
+                                </button>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
 
     </main>
 
