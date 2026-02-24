@@ -63,6 +63,46 @@
             </div>
         </section>
 
+        <!-- Calculator -->
+        <section>
+            <div class="container">
+
+                <div class="calculator-wrapper">
+                    <div class="row g-4 align-items-stretch">
+
+                        <!-- Input -->
+                        <div class="col-12 col-lg-5">
+                            <div class="card calculator-card h-100">
+                                <div class="card-body p-4">
+                                    <h5 class="fw-semibold mb-4">Enter dates</h5>
+
+                                    <form id="ageForm">
+                                        <div class="mb-3">
+                                            <label for="birthDate" class="form-label">Date of birth</label>
+                                            <input type="date" class="form-control" id="birthDate" required>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <label for="asOfDate" class="form-label">Calculate age on</label>
+                                            <input type="date" class="form-control" id="asOfDate" required>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary w-100">
+                                            Calculate age
+                                        </button>
+                                    </form>
+
+                                    <div id="ageError" class="alert alert-danger mt-3 mb-0 d-none" role="alert"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
