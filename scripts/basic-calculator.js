@@ -4,6 +4,7 @@ const resultOutput = document.getElementById("result")
 
 // Variabel
 let isOperator = false
+let isDecimal = false
 
 // Looping for all calculator key
 calculatorKeys.forEach(calculatorKey => {
@@ -18,11 +19,26 @@ calculatorKeys.forEach(calculatorKey => {
         // Check if click key has attributte data-value
         if (keyValue) {
 
+            // Check if click . key
+            if (keyValue === ".") {
+                // Cek if last character output not operator
+                if (isOperator) return
+                // Cek if last character output not .
+                if (isDecimal) return
+
+                // Add decimal/. to ouput
+                resultOutput.textContent += keyValue
+                isDecimal = true
+                return
+            }
+
             // Check if click key has operator class
             if (key.classList.contains("operator")) {
-                
+
                 // Check if output only 0
                 if (resultContent === "0") return
+                
+                isDecimal = false
 
                 // Check if last character operator and replace it
                 if (isOperator) {
