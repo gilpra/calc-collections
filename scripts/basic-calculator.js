@@ -37,7 +37,7 @@ calculatorKeys.forEach(calculatorKey => {
 
                 // Check if output only 0
                 if (resultContent === "0") return
-                
+
                 isDecimal = false
 
                 // Check if last character operator and replace it
@@ -61,6 +61,21 @@ calculatorKeys.forEach(calculatorKey => {
             // Add number to output
             resultOutput.textContent += keyValue
             isOperator = false
+
+        // Click key is action attribute
+        } else {
+            switch (key.getAttribute("data-action")) {
+
+                // Clear all output
+                case "clear":
+
+                    resultOutput.textContent = "0"
+                    break;
+
+                default:
+                    break;
+            }
         }
+
     })
 });
