@@ -84,6 +84,11 @@ calculatorKeys.forEach(calculatorKey => {
                     resultOutput.textContent = resultContent.slice(0, -1);
                     break;
 
+                // Calculate output
+                case "calculate":
+                    resultOutput.textContent = eval(resultContent)
+                    break
+
                 default:
                     break;
             }
