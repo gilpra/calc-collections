@@ -72,6 +72,18 @@ calculatorKeys.forEach(calculatorKey => {
                     resultOutput.textContent = "0"
                     break;
 
+                // Delete last character
+                case "delete":
+
+                    // Check if length output 1 and replace to 0
+                    if (resultContent.length == 1) {
+                        resultOutput.textContent = "0"
+                        return
+                    }
+
+                    resultOutput.textContent = resultContent.slice(0, -1);
+                    break;
+
                 default:
                     break;
             }
