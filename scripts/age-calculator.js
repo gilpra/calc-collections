@@ -6,6 +6,7 @@ const calculateBtn = document.getElementById("calculate")
 const yearsResult = document.getElementById("yearsResult")
 const monthsResult = document.getElementById("monthsResult")
 const daysResult = document.getElementById("daysResult")
+const totalDaysResult = document.getElementById("totalDaysResult")
 
 // Set today date in Calculate at on input
 let todayDate = new Date()
@@ -24,6 +25,7 @@ calculateBtn.addEventListener("click", () => {
 
     // Get different date
     let diffDate = asOfDate.getTime() - birthDate.getTime()
+    let totalDay = Math.floor(diffDate / msToDay)
 
     // Get year from diff
     let year = Math.floor(diffDate / (365 * msToDay))
@@ -39,4 +41,5 @@ calculateBtn.addEventListener("click", () => {
     yearsResult.textContent = year
     monthsResult.textContent = month
     daysResult.textContent = day
+    totalDaysResult.textContent = totalDay
 })
