@@ -8,6 +8,8 @@ const monthsResult = document.getElementById("monthsResult")
 const daysResult = document.getElementById("daysResult")
 const totalDaysResult = document.getElementById("totalDaysResult")
 
+const alertError = document.getElementById("ageError")
+
 // Set today date in Calculate at on input
 let todayDate = new Date()
 asOfDateInput.value = todayDate.toISOString().slice(0, 10)
@@ -25,6 +27,14 @@ calculateBtn.addEventListener("click", () => {
 
     // Get different date
     let diffDate = asOfDate.getTime() - birthDate.getTime()
+
+    // Check if birthDate is greater than asOfDate
+    if (diffDate < 0) {
+        alertError.classList.remove("d-none")
+        alertError.textContent = "The date of birth cannot be in the future"
+        return
+    }
+
     let totalDay = Math.floor(diffDate / msToDay)
 
     // Get year from diff
