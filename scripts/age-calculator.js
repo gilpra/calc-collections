@@ -21,6 +21,13 @@ calculateBtn.addEventListener("click", () => {
     birthDate = new Date(birthDateInput.value)
     asOfDate = new Date(asOfDateInput.value)
 
+    // Check if date is valid
+    if (Number.isNaN(birthDate.getTime()) || Number.isNaN(asOfDate.getTime())) {
+        alertError.classList.remove("d-none")
+        alertError.textContent = "Date not valid!"
+        return
+    }
+
     // Variable
     let remain = 0
     let msToDay = 24 * 60 * 60 * 1000
