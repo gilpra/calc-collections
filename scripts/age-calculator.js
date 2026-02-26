@@ -3,6 +3,10 @@ const birthDateInput = document.getElementById("birthDate")
 const asOfDateInput = document.getElementById("asOfDate")
 const calculateBtn = document.getElementById("calculate")
 
+const yearsResult = document.getElementById("yearsResult")
+const monthsResult = document.getElementById("monthsResult")
+const daysResult = document.getElementById("daysResult")
+
 // Set today date in Calculate at on input
 let todayDate = new Date()
 asOfDateInput.value = todayDate.toISOString().slice(0, 10)
@@ -32,5 +36,7 @@ calculateBtn.addEventListener("click", () => {
     // Get day from diff
     let day = Math.floor(remain / msToDay)
 
-    console.log(`${year} year ${month} month ${day} day`)
+    yearsResult.textContent = year
+    monthsResult.textContent = month
+    daysResult.textContent = day
 })
