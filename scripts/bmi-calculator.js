@@ -3,6 +3,9 @@ heightInput = document.getElementById("heightCm")
 weightInput = document.getElementById("weightKg")
 calculateBtn = document.getElementById("calculate")
 
+bmiResult = document.getElementById("bmiResult")
+bmiCategory = document.getElementById("bmiCategory")
+
 // Event click calculate
 calculateBtn.addEventListener("click", () => {
     // Get height and weight value from input
@@ -24,5 +27,7 @@ calculateBtn.addEventListener("click", () => {
         category = "Obese weight"
     }
 
-    console.log(category)
+    // Display result
+    bmiResult.textContent = calculateBmi.toFixed(1)
+    bmiCategory.textContent = category
 })
