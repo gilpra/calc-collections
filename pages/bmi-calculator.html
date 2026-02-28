@@ -31,6 +31,59 @@
             letter-spacing: -0.03em;
         }
 
+
+
+        .calculator-wrapper {
+            max-width: 920px;
+            margin: 0 auto;
+        }
+
+        .calculator-card {
+            border-color: var(--bs-border-color) !important;
+        }
+
+        .form-label {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .form-control,
+        .btn,
+        .result-card {
+            border-radius: 10px;
+        }
+
+        .form-control {
+            min-height: 48px;
+        }
+
+        .result-card {
+            display: flex;
+            min-height: 100%;
+            flex-direction: column;
+            justify-content: center;
+            padding: 2rem;
+            background: var(--bs-tertiary-bg);
+            border: 1px solid var(--bs-border-color);
+        }
+
+        .result-value {
+            font-size: clamp(3rem, 7vw, 4.5rem);
+            line-height: 1.1;
+            font-weight: 600;
+            letter-spacing: -0.05em;
+        }
+
+        .result-category {
+            display: inline-block;
+            align-self: flex-start;
+            padding: 0.4rem 0.8rem;
+            border: 1px solid var(--bs-border-color);
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
         footer {
             margin-top: 6rem;
         }
@@ -40,6 +93,9 @@
                 padding: 3rem 0 2rem;
             }
 
+            .result-card {
+                padding: 1.5rem;
+            }
         }
     </style>
 
@@ -89,11 +145,22 @@
                                                 step="any" value="65" inputmode="decimal" required>
                                         </div>
 
-                                        <button type="button" id="calculate" class="btn btn-primary w-100">Calculate BMI</button>
+                                        <button type="button" id="calculate" class="btn btn-primary w-100">Calculate
+                                            BMI</button>
                                     </form>
 
                                 </div>
                             </div>
+                        </div>
+
+                        <!-- Result -->
+                        <div class="col-12 col-lg-7">
+                            <section class="result-card" aria-labelledby="resultHeading" aria-live="polite">
+                                <p class="text-secondary small mb-2" id="resultHeading">Your Body Mass Index</p>
+                                <div class="result-value mb-3" id="bmiResult">22.5</div>
+                                <div class="result-category mb-4" id="bmiCategory">Normal weight</div>
+                                <p class="mb-1">Healthy BMI range: <strong>18.5–24.9</strong></p>
+                            </section>
                         </div>
 
                     </div>
