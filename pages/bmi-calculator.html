@@ -64,6 +64,44 @@
             </div>
         </section>
 
+        <section>
+
+            <div class="container">
+                <div class="calculator-wrapper">
+                    <div class="row g-4 align-items-stretch">
+
+                        <!-- Input -->
+                        <div class="col-12 col-lg-5">
+                            <div class="card calculator-card h-100">
+                                <div class="card-body p-4">
+                                    <h5 class="fw-semibold mb-4">Your measurements</h5>
+
+                                    <form id="bmiForm" novalidate>
+                                        <div class="mb-3">
+                                            <label for="heightCm" class="form-label">Height (cm)</label>
+                                            <input type="number" class="form-control" id="heightCm" min="50" max="300"
+                                                step="any" value="170" inputmode="decimal" required>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <label for="weightKg" class="form-label">Weight (kg)</label>
+                                            <input type="number" class="form-control" id="weightKg" min="1" max="1000"
+                                                step="any" value="65" inputmode="decimal" required>
+                                        </div>
+
+                                        <button type="button" id="calculate" class="btn btn-primary w-100">Calculate BMI</button>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
     </main>
 
     <!-- Footer -->
